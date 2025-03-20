@@ -2,7 +2,12 @@ package calculator
 
 class Calculator {
     fun getSum(text: String): Int {
-        val part = text.split(",")
-        return 0
+        var total = 0
+
+        for(number in text.split(",")) {
+            total += number.toInt()
+        }
+
+        return total
     }
 }
