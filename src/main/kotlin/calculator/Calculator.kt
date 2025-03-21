@@ -7,7 +7,12 @@ class Calculator {
         if (text.isNullOrEmpty()) return 0
 
         for(number in text.split(",", ":")) {
-            total += number.toInt()
+            if(number.any { !it.isDigit() }) throw IllegalArgumentException("Invalid number $number")
+
+            val num = number.toInt()
+
+            if (num < 0) throw IllegalArgumentException("Invalid number $number")
+            total += num
         }
 
         return total
