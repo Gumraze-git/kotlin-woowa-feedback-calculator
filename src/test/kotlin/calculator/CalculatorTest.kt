@@ -16,5 +16,8 @@ class CalculatorTest {
 
         // null 입력 시, 0을 반환하는지?
         Assertions.assertEquals(0, calculator.getSum(null))
+
+        // 콜론(:) 구분자로 구분하여 숫자의 합 계산
+        Assertions.assertEquals(6, calculator.getSum("1,2:3"))
     }
 }

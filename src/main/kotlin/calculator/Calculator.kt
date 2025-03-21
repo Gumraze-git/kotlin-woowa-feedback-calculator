@@ -6,7 +6,7 @@ class Calculator {
 
         if (text.isNullOrEmpty()) return 0
 
-        for(number in text.split(",")) {
+        for(number in text.split(",", ":")) {
             total += number.toInt()
         }
 
