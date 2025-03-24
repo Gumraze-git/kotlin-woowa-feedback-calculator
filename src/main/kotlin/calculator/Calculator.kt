@@ -9,16 +9,7 @@ class Calculator {
                 val customDelimiter = text.split("\n")[0].substring(2)
                 val customText = text.split("\n")[1]
 
-                for (number in customText.split(customDelimiter)) {
-                    if (number.any { !it.isDigit() }) throw IllegalArgumentException("Invalid number $number")
-
-                    val num = number.toInt()
-
-                    if (num < 0) throw IllegalArgumentException("Invalid number $number")
-
-                    total += num
-                }
-                return total
+                return getSum(customText.replace(customDelimiter, ","))
             }
         }
 
