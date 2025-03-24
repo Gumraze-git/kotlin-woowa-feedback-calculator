@@ -20,6 +20,9 @@ class CalculatorTest {
 
         // 콜론(:) 구분자로 구분하여 숫자의 합 계산
         assertEquals(6, calculator.getSum("1,2:3"))
+
+        // 커스텀 구분자 등
+        assertEquals(6, calculator.getSum("//;\n1;2;3"))
     }
 
     @Test
