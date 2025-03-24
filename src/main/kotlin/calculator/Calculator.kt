@@ -5,11 +5,15 @@ class Calculator {
         var total = 0
 
         if (text != null) {
-            if(text.startsWith("//")) {
-                val customDelimiter = text.split("\n")[0].substring(2)
-                val customText = text.split("\n")[1]
+            if (text.startsWith("//")) {
+                if (text.contains("\n")) {
+                    val customDelimiter = text.split("\n")[0].substring(2)
+                    val customText = text.split("\n")[1]
 
-                return getSum(customText.replace(customDelimiter, ","))
+                    return getSum(customText.replace(customDelimiter, ","))
+                } else {
+                    return throw IllegalArgumentException("Invalid text")
+                }
             }
         }
 
